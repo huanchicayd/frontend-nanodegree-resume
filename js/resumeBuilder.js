@@ -4,7 +4,7 @@ This is empty on purpose! Your code to build the resume will go here.
 
 var bio = {
   name: 'Daniel Huanchicay',
-  role: 'Front-End Developer',
+  role: 'Designer/Front-End',
   contacts: {
     mobile: '97918-0893',
     email: 'daniel@danielhuanchicay.com',
@@ -12,12 +12,15 @@ var bio = {
     twitter: '@huanchicay',
     location: 'Rio de Janeiro'
   },
-  welcomeMessage: 'lorem',
+  welcomeMessage: 'Profissional encantado com o desenvolvimento front-end.',
   skills: [
     'HTML',
     'CSS/SASS',
     'JavaScript/Jquery',
-    'Git'
+    'Git',
+    'User Interface',
+    'User Experience',
+    'Interaction Design'
   ],
   bioPic: 'images/fry.jpg',
 };
@@ -27,32 +30,38 @@ var education = {
     {
       name: 'Escola Superior de Desenho Industrial, UERJ',
       location: 'Rio de Janeiro',
-      degree: 'Lorem A',
-      majors: 'Lorem B',
+      degree: 'Bacharelado',
+      majors: 'Desenho Industrial',
       dates: '2015',
-      url: 'www.lorem.com'
+      url: 'http://www.esdi.uerj.br/'
     },
     {
       name: 'Instituto Infnet',
       location: 'Rio de Janeiro',
-      degree: 'Lorem A',
-      majors: 'Lorem B',
+      degree: 'Formação Intensiva',
+      majors: 'Webdesigner',
       dates: '2010',
-      url: 'www.lorem.com'
+      url: 'https://www.infnet.edu.br/training/'
     }
   ],
   onlineCourses: [
     {
-      title: 'Javascript Crash Course',
-      school: 'Udacity',
-      dates: 2014,
-      url: 'www.lorem.com'
+      title: 'Javascript Ninja',
+      school: 'Udemy',
+      dates: 2017,
+      url: 'https://www.udemy.com/'
     },
     {
-      title: 'Javascript Crash Course',
-      school: 'Udacity',
-      dates: 2014,
-      url: 'www.lorem.com'
+      title: 'Desenvolvedor Front-End',
+      school: 'Alura',
+      dates: 2017,
+      url: 'https://www.alura.com.br/'
+    },
+    {
+      title: 'UX para webdesigners',
+      school: 'UX Academy',
+      dates: 2017,
+      url: 'http://www.uxacademy.com.br/'
     }
   ]
 };
@@ -68,16 +77,16 @@ var work = {
     },
     {
       employer: 'Laboratório de Tecnologia da Informação e Comunicação',
-      title: 'Designer Intern',
-      location: 'São Paulo, SP',
+      title: 'Designer Estagiário',
+      location: 'Rio de Janeiro, RJ',
       dates: 'Abril 2013 - Julho 2013',
       description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.'
     },
     {
-      employer: 'Laboratório de Tecnologia da Informação e Comunicação',
-      title: 'Designer Intern',
-      location: 'Belo Horizonte, BH',
-      dates: 'Abril 2013 - Julho 2013',
+      employer: 'Empresa 3',
+      title: 'Front-End',
+      location: 'São Paulo, SP',
+      dates: 'Abril 2011 - Julho 2012',
       description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.'
     }
   ]
@@ -86,21 +95,21 @@ var work = {
 var projects = {
   projects: [
     {
-      title: 'Tophostels',
-      dates: '2015-2016',
+      title: 'Ipiranga (aplicativo mobile)',
+      dates: '2016',
       description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.',
       images: [
-        'images/197x148.gif',
-        'images/197x148.gif'
+        'images/ipiranga.jpg',
+        'images/ipiranga.jpg'
       ]
     },
     {
-      title: 'Mobile Application',
+      title: 'Finxi (site)',
       dates: '2017',
       description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.',
       images: [
-        'images/197x148.gif',
-        'images/197x148.gif'
+        'images/finxi.jpg',
+        'images/finxi.jpg'
       ]
     }
   ]
@@ -211,7 +220,7 @@ education.display = function(){
     var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
     $('.education-entry:last').append(formattedLocation);
 
-    var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].location);
+    var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].majors);
     $('.education-entry:last').append(formattedMajor);
   }
 
